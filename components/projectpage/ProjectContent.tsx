@@ -1,11 +1,13 @@
-import ReactMarkdown from 'react-markdown'
-import rehypeSlug from 'rehype-slug'
-import RevealWrapper from '../animation/RevealWrapper'
-import TableOfContent from '../shared/TableOfContent'
+import ReactMarkdown from "react-markdown";
+import rehypeSlug from "rehype-slug";
+import RevealWrapper from "../animation/RevealWrapper";
+import TableOfContent from "../shared/TableOfContent";
 
 const ProjectContent = async ({ project }: any) => {
-  const headings = project.content.match(/### .+/g) ?? []
-  const tableOfContents = headings.map((heading: string) => heading.replace('### ', ''))
+  const headings = project.content.match(/### .+/g) ?? [];
+  const tableOfContents = headings.map((heading: string) =>
+    heading.replace("### ", "")
+  );
 
   return (
     <section className="pb-14 md:pb-16 lg:pb-[88px] xl:pb-[100px]">
@@ -17,15 +19,23 @@ const ProjectContent = async ({ project }: any) => {
             </div>
           </aside>
           <article className="project-details-body overflow-hidden [&>*]:scroll-mt-20">
-            <RevealWrapper as="figure" className="max-w-[870px] md:h-[480px]">
-              <img src={project.data.thumbnail} alt="Services Big Img" className="h-full w-full object-cover" />
-            </RevealWrapper>
-            <ReactMarkdown rehypePlugins={[[rehypeSlug]]}>{project.content}</ReactMarkdown>
+            {project.data?.thumbnail && (
+              <RevealWrapper as="figure" className="max-w-[870px] md:h-[480px]">
+                <img
+                  src={project.data.thumbnail}
+                  alt="Services Big Img"
+                  className="h-full w-full object-cover"
+                />
+              </RevealWrapper>
+            )}
+            <ReactMarkdown rehypePlugins={[[rehypeSlug]]}>
+              {project.content}
+            </ReactMarkdown>
           </article>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ProjectContent
+export default ProjectContent;

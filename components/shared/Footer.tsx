@@ -1,74 +1,137 @@
-import footerData from '@/data/footer.json'
-import arrowIcon from '@/public/images/icons/arrow-Icon.svg'
-import logo from '@/public/images/logo.svg'
-import Image from 'next/image'
-import Link from 'next/link'
-import FooterProvider from './FooterProvider'
+"use client";
 
-const Footer = () => {
+import { useTranslations } from "next-intl";
+import Link from "next/link";
+
+export default function Footer() {
+  const t = useTranslations("footer");
+  const copyT = useTranslations("copy");
+
   return (
-    <FooterProvider>
-      <div className="container">
-        <div className="relative z-10 flex flex-col flex-wrap justify-center gap-y-10 sm:flex-row sm:justify-between sm:gap-y-16">
-          <div className="pr-8 max-lg:basis-full">
-            <h5 className="mb-4 font-satoshi text-sm font-bold uppercase tracking-[3px] text-white sm:mb-8">
-              Reach Us
-            </h5>
-            <p className="mb-5 text-sm text-white">
-              Book a quick 15 min meeting where we discuss if our offer <br />
-              would work for your case
-            </p>
-            <div className="group flex max-w-[360px] items-center justify-between gap-4 bg-primary bg-opacity-30 p-4 backdrop-blur-2xl">
-              <Image className="h-[55px] w-auto" src={logo} alt="logo" />
-              <div>
-                <h6 className="font-satoshi text-sm font-bold text-white">Schedule a Free Meeting</h6>
-                <p className="text-sm text-white">1 spot left this month</p>
-              </div>
-              <Link href="/contact">
-                <figure className="relative h-[55px] w-[55px] cursor-pointer overflow-hidden bg-primary">
-                  <Image
-                    src={arrowIcon}
-                    alt="Arrow Icon"
-                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-100 transition-all duration-500 group-hover:-translate-y-12 group-hover:translate-x-8 group-hover:opacity-0"
+    <footer className="bg-gray-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Company Info */}
+          <div className="col-span-1 md:col-span-2">
+            <h3 className="text-xl font-bold mb-4">Rivor</h3>
+            <p className="text-gray-300 mb-4 max-w-md">{t("description")}</p>
+            <div className="flex space-x-4">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <span className="sr-only">Facebook</span>
+                <svg
+                  className="h-6 w-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                    clipRule="evenodd"
                   />
-                  <Image
-                    src={arrowIcon}
-                    alt="Arrow Icon"
-                    className="absolute -translate-x-4 translate-y-12 opacity-0 transition-all duration-500 group-hover:translate-x-[19px] group-hover:translate-y-5 group-hover:opacity-100"
+                </svg>
+              </a>
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <span className="sr-only">Twitter</span>
+                <svg
+                  className="h-6 w-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                </svg>
+              </a>
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <span className="sr-only">LinkedIn</span>
+                <svg
+                  className="h-6 w-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                    clipRule="evenodd"
                   />
-                </figure>
-              </Link>
+                </svg>
+              </a>
             </div>
           </div>
 
-          {footerData.map((section, index) => (
-            <div key={`Id_${index}`}>
-              <h5 className="mb-4 font-satoshi text-sm font-bold uppercase tracking-[3px] text-white sm:mb-8">
-                {section.title}
-              </h5>
-              <ul>
-                {section.links.map(({ href, label }) => (
-                  <li className="mb-4" key={href}>
-                    <Link
-                      href={href}
-                      className="block text-white transition-colors duration-300 hover:font-medium hover:text-primary">
-                      {label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">{t("quickLinks")}</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/about"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  {t("services")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/portfolio"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Portfolio
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  {t("contact")}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">{t("newsletter")}</h4>
+            <p className="text-gray-300 mb-4">
+              Suscríbete para recibir las últimas noticias y actualizaciones.
+            </p>
+            <form className="flex">
+              <input
+                type="email"
+                placeholder={t("newsletterPlaceholder")}
+                className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <button
+                type="submit"
+                className="px-4 py-2 bg-blue-600 text-white rounded-r-md hover:bg-blue-700 transition-colors"
+              >
+                {t("newsletterButton")}
+              </button>
+            </form>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
+          <p className="text-gray-400">{copyT("text")}</p>
         </div>
       </div>
-
-      <div className="absolute bottom-0 w-full">
-        <h5 className="footer-text xs:text-5xl absolute bottom-0 left-1/2 w-full -translate-x-1/2 translate-y-[30%] text-nowrap text-center font-satoshi text-4xl font-medium tracking-widest sm:text-6xl md:text-[88px] lg:text-[120px] xl:text-[150px] 2xl:text-[170px]">
-          RIVOR AGENCY
-        </h5>
-      </div>
-    </FooterProvider>
-  )
+    </footer>
+  );
 }
-
-export default Footer

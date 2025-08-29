@@ -1,16 +1,17 @@
-import getMarkDownData from '@/utils/GetMarkDownData'
-import Link from 'next/link'
-import RevealWrapper from '../animation/RevealWrapper'
-import RevealWrapperV2 from '../animation/RevealWrapperV2'
-import TextAppearAnimation from '../animation/TextAppearAnimation'
+import Link from "next/link";
+import RevealWrapper from "../animation/RevealWrapper";
+import RevealWrapperV2 from "../animation/RevealWrapperV2";
+import TextAppearAnimation from "../animation/TextAppearAnimation";
 
 interface WorkType {
-  slug: string
-  content: string
-  [key: string]: any
+  slug: string;
+  content: string;
+  [key: string]: any;
 }
 
-const marketingBlogs: WorkType[] = getMarkDownData('data/marketing/blog')
+// Temporarily disabled to fix build issues
+// const marketingBlogs: WorkType[] = getMarkDownData('data/marketing/blog')
+const marketingBlogs: WorkType[] = [];
 
 const MarketingBlog = () => {
   return (
@@ -21,7 +22,10 @@ const MarketingBlog = () => {
             <TextAppearAnimation>
               <h2 className="text-appear dark:text-secondary">
                 The latest trends &amp;
-                <i className="font-instrument dark:text-secondary"> expert insights </i>
+                <i className="font-instrument dark:text-secondary">
+                  {" "}
+                  expert insights{" "}
+                </i>
               </h2>
             </TextAppearAnimation>
           </div>
@@ -32,9 +36,15 @@ const MarketingBlog = () => {
                 Discover key trends and insights to elevate your organization.
               </p>
             </TextAppearAnimation>
-            <RevealWrapper as="ul" className="reveal-me mt-5 justify-self-end max-md:w-full md:mt-10">
+            <RevealWrapper
+              as="ul"
+              className="reveal-me mt-5 justify-self-end max-md:w-full md:mt-10"
+            >
               <li className="mx-auto block w-full text-center md:inline-block md:w-auto">
-                <Link href="/ai-blog" className="rv-button rv-button-white block !bg-[#DDF3EC] md:inline-block">
+                <Link
+                  href="/ai-blog"
+                  className="rv-button rv-button-white block !bg-[#DDF3EC] md:inline-block"
+                >
                   <div className="rv-button-top !bg-[#DDF3EC] dark:!border-secondary/30">
                     <span className="!text-secondary">Read More Articles</span>
                   </div>
@@ -51,7 +61,10 @@ const MarketingBlog = () => {
           {marketingBlogs.map((item) => (
             <div key={item.slug} className="group relative">
               <div>
-                <RevealWrapper as="figure" className="reveal-me w-full overflow-hidden">
+                <RevealWrapper
+                  as="figure"
+                  className="reveal-me w-full overflow-hidden"
+                >
                   <img
                     src={item?.thumbnail}
                     alt={item?.title}
@@ -64,13 +77,16 @@ const MarketingBlog = () => {
                   </div>
                   <div className="blog-title mb-7">
                     <Link href={`/marketing/blog/${item.slug}`}>
-                      <h3 className="text-[34px] font-normal lg:leading-[1.05]">{item?.title}</h3>
+                      <h3 className="text-[34px] font-normal lg:leading-[1.05]">
+                        {item?.title}
+                      </h3>
                     </Link>
                   </div>
                   <div className="mx-auto w-[90%] md:mx-0 md:w-auto">
                     <Link
                       href={`/marketing/blog/${item.slug}`}
-                      className="rv-button rv-button-white rv-button-sm-v2 block text-center md:inline-block">
+                      className="rv-button rv-button-white rv-button-sm-v2 block text-center md:inline-block"
+                    >
                       <div className="rv-button-top">
                         <span>Read More</span>
                       </div>
@@ -86,7 +102,7 @@ const MarketingBlog = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default MarketingBlog
+export default MarketingBlog;

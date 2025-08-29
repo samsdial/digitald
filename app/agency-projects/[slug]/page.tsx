@@ -1,23 +1,26 @@
-import { ProjectType } from '@/components/projectpage/OurProject'
-import ProjectContent from '@/components/projectpage/ProjectContent'
-import ProjectDetailsHero from '@/components/projectpage/ProjectDetailsHero'
-import CTA from '@/components/shared/CTA'
-import CtaImageSlider from '@/components/shared/CtaImageSlider'
-import LayoutOne from '@/components/shared/LayoutOne'
-import getMarkDownContent from '@/utils/GetMarkDownContent'
-import getMarkDownData from '@/utils/GetMarkDownData'
+import ProjectContent from "@/components/projectpage/ProjectContent";
+import ProjectDetailsHero from "@/components/projectpage/ProjectDetailsHero";
+import CTA from "@/components/shared/CTA";
+import CtaImageSlider from "@/components/shared/CtaImageSlider";
+import LayoutOne from "@/components/shared/LayoutOne";
+import getMarkDownContent from "@/utils/GetMarkDownContent";
 
-export async function generateStaticParams() {
-  const projects: ProjectType[] = getMarkDownData('data/agency-projects')
-  return projects.map((project) => ({
-    slug: project.slug,
-  }))
-}
+// Temporarily disabled to fix build issues
+// export async function generateStaticParams() {
+//   const projects: ProjectType[] = getMarkDownData('data/agency-projects')
+//   return projects.map((project) => ({
+//     slug: project.slug,
+//   }))
+// }
 
-const AgencyProjectDetails = async ({ params }: { params: Promise<{ slug: string }> }) => {
-  const slug = (await params).slug
-  const project = getMarkDownContent('data/agency-projects/', slug)
-  const postprojects = project.data
+const AgencyProjectDetails = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) => {
+  const slug = (await params).slug;
+  const project = getMarkDownContent("data/agency-projects/", slug);
+  const postprojects = project.data;
 
   return (
     <LayoutOne>
@@ -32,16 +35,18 @@ const AgencyProjectDetails = async ({ params }: { params: Promise<{ slug: string
         Let's chat!
         <CtaImageSlider
           slides={[
-            { id: '1', img: '/images/agent/09.png' },
-            { id: '2', img: '/images/agent/02.jpg' },
-            { id: '3', img: '/images/agent/10.png' },
+            { id: "1", img: "/images/agent/09.png" },
+            { id: "2", img: "/images/agent/02.jpg" },
+            { id: "3", img: "/images/agent/10.png" },
           ]}
         />
         with us.
-        <i className="block font-instrument italic max-md:inline-block max-sm:pl-2 sm:mt-10">A virtual coffee?</i>
+        <i className="block font-instrument italic max-md:inline-block max-sm:pl-2 sm:mt-10">
+          A virtual coffee?
+        </i>
       </CTA>
     </LayoutOne>
-  )
-}
+  );
+};
 
-export default AgencyProjectDetails
+export default AgencyProjectDetails;

@@ -1,47 +1,62 @@
-import { ProjectType } from '@/components/projectpage/OurProject'
-import ProjectContent from '@/components/projectpage/ProjectContent'
-import ProjectDetailsHero from '@/components/projectpage/ProjectDetailsHero'
-import CTA from '@/components/shared/CTA'
-import CtaImageSlider from '@/components/shared/CtaImageSlider'
-import LayoutTwo from '@/components/shared/LayoutTwo'
-import getMarkDownContent from '@/utils/GetMarkDownContent'
-import getMarkDownData from '@/utils/GetMarkDownData'
+import ProjectContent from "@/components/projectpage/ProjectContent";
+import ProjectDetailsHero from "@/components/projectpage/ProjectDetailsHero";
+import CTA from "@/components/shared/CTA";
+import CtaImageSlider from "@/components/shared/CtaImageSlider";
+import LayoutTwo from "@/components/shared/LayoutTwo";
+import getMarkDownContent from "@/utils/GetMarkDownContent";
 
-export async function generateStaticParams() {
-  const projects: ProjectType[] = getMarkDownData('data/video-photography/project')
-  return projects.map((project) => ({
-    slug: project.slug,
-  }))
-}
+// Temporarily disabled to fix build issues
+// export async function generateStaticParams() {
+//   try {
+//     const projects: ProjectType[] = getMarkDownData('data/video-photography/project')
+//     return projects.map((project) => ({
+//       slug: project.slug,
+//     }))
+//   } catch (error) {
+//     console.error('Error in generateStaticParams:', error)
+//     return []
+//   }
+// }
 
-const ProjectDetails = async ({ params }: { params: Promise<{ slug: string }> }) => {
-  const slug = (await params).slug
-  const project = getMarkDownContent('data/video-photography/project/', slug)
-  const postprojects = project.data
+const ProjectDetails = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) => {
+  try {
+    const slug = (await params).slug;
+    const project = getMarkDownContent("data/video-photography/project/", slug);
+    const postprojects = project.data;
 
-  return (
-    <LayoutTwo>
-      <ProjectDetailsHero
-        badgeTitle="Project Case Study"
-        title={postprojects?.title}
-        description={postprojects?.description}
-        scale
-      />
-      <ProjectContent project={project} />
-      <CTA>
-        Let's chat!
-        <CtaImageSlider
-          slides={[
-            { id: '1', img: '/images/agent/15.png' },
-            { id: '2', img: '/images/agent/18.png' },
-            { id: '3', img: '/images/agent/03.jpg' },
-          ]}
+    return (
+      <LayoutTwo>
+        <ProjectDetailsHero
+          badgeTitle="Project Case Study"
+          title={postprojects?.title}
+          description={postprojects?.description}
+          scale
         />
-        with us.
-        <i className="block font-instrument italic max-md:inline-block max-sm:pl-2 sm:mt-10">A virtual coffee?</i>
-      </CTA>
-    </LayoutTwo>
-  )
-}
+        <ProjectContent project={project} />
+        <CTA>
+          Let's chat!
+          <CtaImageSlider
+            slides={[
+              { id: "1", img: "/images/agent/15.png" },
+              { id: "2", img: "/images/agent/18.png" },
+              { id: "3", img: "/images/agent/03.jpg" },
+            ]}
+          />
+          with us.
+          <i className="block font-instrument italic max-md:inline-block max-sm:pl-2 sm:mt-10">
+            A virtual coffee?
+          </i>
+        </CTA>
+      </LayoutTwo>
+    );
+  } catch (error) {
+    console.error("Error in ProjectDetails:", error);
+    throw error;
+  }
+};
 
-export default ProjectDetails
+export default ProjectDetails;

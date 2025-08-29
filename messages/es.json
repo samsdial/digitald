@@ -1,0 +1,62 @@
+{
+  "copy": {
+    "text": "Todos los derechos reservados Idial.agency"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "services": "Servicios",
+    "portfolio": "Portafolio",
+    "contact": "Contacto",
+    "blog": "Blog",
+    "career": "Carreras"
+  },
+  "hero": {
+    "title": "Las palabras adecuadas.",
+    "titleHighlight":" La estrategia adecuada",
+    "titleEnd": "Los resultados adecuados.",
+    "subtitle": "Somos Idial, una agencia de redacción y contenidos dedicada a ayudar a las marcas a crecer a través de una redacción atractiva y de gran impacto.",
+    "cta": "Hablemos",
+    "description": "Transformamos ideas en experiencias digitales excepcionales"
+  },
+  "about": {
+    "title": "Acerca de Nosotros",
+    "subtitle": "Somos Idial, una agencia de redacción publicitaria y contenidos dedicada a ayudar a las marcas a crecer mediante textos atractivos y de gran impacto.",
+    "description": "Con años de experiencia en el diseño y desarrollo digital, ayudamos a las empresas a destacar en el mundo digital."
+  },
+  "services": {
+    "title": "Servicios",
+    "subtitle": "Copia que",
+    "subtitleHighlight": "impulsa el crecimiento",
+    "webDesign": "Diseño Web",
+    "webDevelopment": "Desarrollo Web",
+    "branding": "Branding",
+    "marketing": "Marketing Digital",
+    "seo": "SEO",
+    "consulting": "Consultoría"
+  },
+  "cta": {
+    "title": "¿Listo para comenzar?",
+    "subtitle": "Hablemos sobre tu proyecto",
+    "button": "Contactar Ahora"
+  },
+  "footer": {
+    "description": "Agencia de diseño creativo especializada en soluciones digitales innovadoras",
+    "quickLinks": "Enlaces Rápidos",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "followUs": "Síguenos",
+    "newsletter": "Newsletter",
+    "newsletterPlaceholder": "Tu email",
+    "newsletterButton": "Suscribirse"
+  },
+  "common": {
+    "learnMore": "Saber Más",
+    "viewProject": "Ver Proyecto",
+    "readMore": "Leer Más",
+    "backToTop": "Volver Arriba",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito"
+  }
+}

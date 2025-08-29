@@ -1,0 +1,62 @@
+{
+  "copy": {
+    "text": "All rights Reserved idial.agency"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "blog": "Blog",
+    "career": "Careers"
+  },
+  "hero": {
+    "title": "The right words.",
+    "titleHighlight":"The right strategy.",
+    "titleEnd": "The right results.",
+    "subtitle": "We are Idial, a copywriting and content agency dedicated to helping brands grow through engaging, high-impact writing.",
+    "cta": "let’s talk",
+    "description": "We transform ideas into exceptional digital experiences"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "We are a team passionate about creativity and innovation",
+    "description": "With years of experience in digital design and development, we help businesses stand out in the digital world."
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Copy that",
+    "subtitleHighlight": "drives growth",
+    "webDesign": "Web Design",
+    "webDevelopment": "Web Development",
+    "branding": "Branding",
+    "marketing": "Digital Marketing",
+    "seo": "SEO",
+    "consulting": "Consulting"
+  },
+  "cta": {
+    "title": "Ready to get started?",
+    "subtitle": "Let's talk about your project",
+    "button": "Contact Now"
+  },
+  "footer": {
+    "description": "Creative design agency specializing in innovative digital solutions",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "contact": "Contact",
+    "followUs": "Follow Us",
+    "newsletter": "Newsletter",
+    "newsletterPlaceholder": "Your email",
+    "newsletterButton": "Subscribe"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "viewProject": "View Project",
+    "readMore": "Read More",
+    "backToTop": "Back to Top",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  }
+}

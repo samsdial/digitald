@@ -1,15 +1,16 @@
-import getMarkDownData from '@/utils/GetMarkDownData'
-import Link from 'next/link'
-import RevealWrapper from '../animation/RevealWrapper'
-import TextAppearAnimation from '../animation/TextAppearAnimation'
+import Link from "next/link";
+import RevealWrapper from "../animation/RevealWrapper";
+import TextAppearAnimation from "../animation/TextAppearAnimation";
 
 interface CaseStudyType {
-  slug: string
-  content: string
-  [key: string]: any
+  slug: string;
+  content: string;
+  [key: string]: any;
 }
 
-const caseStudies: CaseStudyType[] = getMarkDownData('data/management-consulting/project')
+// Temporarily disabled to fix build issues
+// const caseStudies: CaseStudyType[] = getMarkDownData('data/management-consulting/project')
+const caseStudies: CaseStudyType[] = [];
 
 const ProjectCaseStudies = () => {
   return (
@@ -18,7 +19,8 @@ const ProjectCaseStudies = () => {
         <div className="mb-10 text-center lg:mb-20">
           <TextAppearAnimation>
             <h2 className="text-appear">
-              Helping businesses <span className="font-instrument italic">thrive</span>
+              Helping businesses{" "}
+              <span className="font-instrument italic">thrive</span>
             </h2>
           </TextAppearAnimation>
         </div>
@@ -27,9 +29,13 @@ const ProjectCaseStudies = () => {
           {caseStudies.map((item) => (
             <RevealWrapper
               key={item.slug}
-              className="reveal-me underline-hover-effect group relative flex flex-col items-center lg:flex-row">
+              className="reveal-me underline-hover-effect group relative flex flex-col items-center lg:flex-row"
+            >
               <figure className="-z-30 max-w-[870px] overflow-hidden">
-                <Link href={`/management-consulting/project/${item.slug}`} className="block">
+                <Link
+                  href={`/management-consulting/project/${item.slug}`}
+                  className="block"
+                >
                   <img
                     src={item?.image}
                     className="h-full w-full transition-all duration-500 group-hover:rotate-3 group-hover:scale-125"
@@ -49,25 +55,50 @@ const ProjectCaseStudies = () => {
                     </h3>
                   </Link>
                 </div>
-                <Link href={`/management-consulting/project/${item.slug}`} className="rv-button rv-button-white">
+                <Link
+                  href={`/management-consulting/project/${item.slug}`}
+                  className="rv-button rv-button-white"
+                >
                   <div className="rv-button-top text-center">
                     <span className="mr-2">Read Case Study</span>
-                    <img className="inline dark:hidden" src="/images/icons/top-arrow.svg" alt="Arrow Icon" />
-                    <img className="hidden dark:inline" src="/images/icons/top-arrow-dark.svg" alt="Arrow Icon" />
+                    <img
+                      className="inline dark:hidden"
+                      src="/images/icons/top-arrow.svg"
+                      alt="Arrow Icon"
+                    />
+                    <img
+                      className="hidden dark:inline"
+                      src="/images/icons/top-arrow-dark.svg"
+                      alt="Arrow Icon"
+                    />
                   </div>
                   <div className="rv-button-bottom text-center">
                     <span className="mr-2">Read Case Study</span>
-                    <img className="hidden dark:inline" src="/images/icons/top-arrow.svg" alt="Arrow Icon" />
-                    <img className="inline dark:hidden" src="/images/icons/top-arrow-dark.svg" alt="Arrow Icon" />
+                    <img
+                      className="hidden dark:inline"
+                      src="/images/icons/top-arrow.svg"
+                      alt="Arrow Icon"
+                    />
+                    <img
+                      className="inline dark:hidden"
+                      src="/images/icons/top-arrow-dark.svg"
+                      alt="Arrow Icon"
+                    />
                   </div>
                 </Link>
               </div>
             </RevealWrapper>
           ))}
         </div>
-        <RevealWrapper as="ul" className="reveal-me mt-7 justify-self-center max-md:w-full md:mt-14">
+        <RevealWrapper
+          as="ul"
+          className="reveal-me mt-7 justify-self-center max-md:w-full md:mt-14"
+        >
           <li className="mx-auto block w-full text-center md:inline-block md:w-auto">
-            <Link href="/portfolio-agency/case-study" className="rv-button rv-button-white block md:inline-block">
+            <Link
+              href="/portfolio-agency/case-study"
+              className="rv-button rv-button-white block md:inline-block"
+            >
               <div className="rv-button-top">
                 <span>Read More Case Studies</span>
               </div>
@@ -79,7 +110,7 @@ const ProjectCaseStudies = () => {
         </RevealWrapper>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ProjectCaseStudies
+export default ProjectCaseStudies;
