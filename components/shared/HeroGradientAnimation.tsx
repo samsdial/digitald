@@ -1,6 +1,6 @@
 'use client'
 
-import heroGradient from '@/public/images/hero-gradient-background.png'
+import heroGradient from '@/public/images/hero-gradient-background-02.png'
 import { useGSAP } from '@gsap/react'
 import { gsap, Linear } from 'gsap'
 import Image from 'next/image'

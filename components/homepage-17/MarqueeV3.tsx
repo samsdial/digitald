@@ -92,7 +92,7 @@ const MarqueeV3 = () => {
     <section className="relative z-[2000] -mt-[160px] overflow-hidden bg-backgroundBody pb-14 pt-28 dark:bg-secondary sm:-mt-[250px] md:-mt-[350px] md:pb-16 md:pt-32 lg:-mt-[450px] lg:pb-[88px] lg:pt-44 xl:pb-[100px] xl:pt-[200px]">
       <div>
         <RevealWrapper as="p" className="reveal-me container mb-8 text-center lg:mb-16">
-          Our solutions power businesses worldwide.
+          Nuestras soluciones impulsan negocios en todo el mundo.
         </RevealWrapper>
         <RevealWrapper
           onMouseEnter={handleMouseEnter}

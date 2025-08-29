@@ -6,9 +6,9 @@ const SocialProof = () => {
       <RevealWrapperV2 className="container">
         <div className="relative">
           <div className="z-50 flex items-center justify-center">
-            <img src="/images/path-images/social-proof.png" alt="social-proof" className="inline-block dark:hidden" />
+            <img src="/images/basic/social-proof.png" alt="social-proof" className="inline-block dark:hidden" />
             <img
-              src="/images/path-images/social-proof-dark.png"
+              src="/images/basic/social-proof-dark.png"
               alt="social-proof"
               className="hidden dark:inline-block"
             />

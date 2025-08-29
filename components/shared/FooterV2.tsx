@@ -6,7 +6,7 @@ const FooterV2 = () => {
     <footer className="w-full overflow-hidden">
       <div className="bg-backgroundBody dark:bg-secondary">
         <h5 className="footer-text-v2 w-full text-nowrap text-center font-satoshi text-[120px] font-medium uppercase leading-[100%] sm:text-[200px] md:text-[258px] lg:text-[300px] xl:text-[350px] 2xl:text-[386px]">
-          Rivor
+          IDIAL
         </h5>
       </div>
       <div className="-mt-10 bg-backgroundBody py-4 dark:bg-dark sm:-mt-[70px] md:-mt-24 xl:-mt-28">
@@ -16,15 +16,17 @@ const FooterV2 = () => {
             {/* Reach Us Section */}
             <div className="pr-8 max-lg:basis-full">
               <p className="mb-5 max-w-[360px]">
-                Rivor Agency offers global business and technology services, transforming brands with customized
-                solutions for over a decade.
+                Idial Agency ofrece servicios empresariales y tecnológicos globales, transformando marcas con soluciones personalizadas
+                desde hace más de una década.
               </p>
-              <h5 className="mb-3 font-satoshi text-2xl font-medium leading-[1.1]">Address</h5>
-              <p>
-                2261 Market Street #5039 San <br />
-                Francisco, CA 94114
-              </p>
-              <div className="mt-7 flex gap-6 md:mt-10">
+              <div className='flex gap-5'>
+
+                <h5 className="mb-3 font-satoshi text-2xl font-medium leading-[1.1]">Cel:</h5>
+                <p>
+                  +57 3212679283
+                </p>
+              </div>
+              <div className="hidden mt-7 flex gap-6 md:mt-10">
                 <span>
                   <Link href="https://www.facebook.com/staticmania">
                     <svg
@@ -260,7 +262,7 @@ const FooterV2 = () => {
             </div>
 
             {footerData.map((section, index) => (
-              <div key={`Id_${index}`}>
+              <div key={`Id_${index}`} className='hidden'>
                 <h5 className="mb-4 text-2xl leading-[1.1]">{section.title}</h5>
                 <ul>
                   {section.links.map(({ href, label }) => (
@@ -276,7 +278,7 @@ const FooterV2 = () => {
               </div>
             ))}
           </div>
-          <p className="mt-10 border-t pt-5 text-center dark:border-dark">All rights Reserved Rivor.agency</p>
+          <p className="mt-10 border-t pt-5 text-center dark:border-dark">Todos los derechos reservados Idial.agency</p>
         </div>
       </div>
     </footer>

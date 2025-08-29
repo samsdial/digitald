@@ -306,7 +306,7 @@ export default function Navbar() {
                 priority
               />
             </Link>
-            <div className="flex items-center">
+            <div className="hidden flex items-center">
               <button
                 ref={openBtnRef}
                 onClick={openMenu}
