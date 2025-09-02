@@ -8,7 +8,10 @@ import { ReactNode, Suspense } from "react";
 import "../scss/main.scss";
 
 export const metadata: Metadata = {
-  title: "Rivor Template",
+  title: "Idial Template",
+  icons: {
+    icon: '/images/favicon.ico'
+  }
 };
 
 export default function RootLayout({
